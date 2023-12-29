@@ -13,6 +13,10 @@ module.exports = {
         'loginpattern': "url('/src/img/bg_login.png')",
       }
     },
+    screens: {
+      'smalldevices': '640px',
+      // => @media (max-width: 640px) { ... }
+    },
     fontfamily: {
       'poppins': ['Poppins', 'sans-serif']
     }
