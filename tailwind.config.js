@@ -2,6 +2,9 @@ module.exports = {
   content: ["./**/*.{html,js}"],
   theme: {
     extend: {
+      content:{
+        'icecoolfresh' : 'url("/src/img/icecoolfreshpattern.svg")',
+      },
       colors: {
         coolfreshprimary : '#024D76',
         hitamcoolfresh : '#272323',
