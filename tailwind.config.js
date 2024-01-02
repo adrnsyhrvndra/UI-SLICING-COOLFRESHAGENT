@@ -14,6 +14,8 @@ module.exports = {
         abutulisancoolfresh : '#272323',
         langitbirucoolfresh: '#27AAE1',
         backgroundabu: '#F9F9F9',
+        backgroundborder : '#4A5680',
+        abubglogout: '#F6EFEF',
       },
       backgroundImage: {
         'loginpattern': "url('/src/img/bg_login.png')",

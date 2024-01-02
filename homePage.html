@@ -9,9 +9,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> 
   <!-- Alpine JS CDN --> 
-  <script defer src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"></script> 
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js"></script>
 </head> 
-<body class="scroll-smooth font-poppins bg-backgroundabu">
+<body class="scroll-smooth font-poppins bg-backgroundabu" x-data="{show:false}">
       <div aria-label="container hp" class="mx-auto w-[90%]">
             <div aria-label="Informasi Pengguna" class="mt-6 flex flex-row gap-6 items-start justify-center w-full relative -z-20">
                   <div aria-label="Foto Profil" class="w-1/2">
@@ -246,7 +246,7 @@
                                     <p class="text-xxs font-semibold mt-2">Pengajuan Retur</p>
                               </div>
                         </div>
-                        <button aria-label="button logout" class="w-full mt-6 py-4 bg-langitbirucoolfresh text-center cursor-pointer">
+                        <button aria-label="button logout" class="w-full mt-6 py-4 bg-langitbirucoolfresh text-center cursor-pointer" @click="show = !show">
                               <div class="flex justify-center gap-4 items-center">
                                     <p class="text-white font-medium">Logout</p>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
@@ -257,7 +257,7 @@
                   </div>
             </div>
       </div>
-      <div aria-label="menu bawah" class="w-full fixed bottom-0 py-6 bg-white shadow-lg">
+      <div aria-label="menu bawah" class="w-full fixed bottom-0 py-8 bg-white shadow-lg z-[85px]">
             <div class="flex flex-row justify-evenly gap-10 items-center">
                   <div aria-label="icon-home">
                         <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
@@ -282,6 +282,19 @@
                             </svg>
                   </div>
             </div>
+      </div>
+      <div aria-label="Pop up logout">
+            <div class="fixed bottom-0 w-full h-fit px-6 py-6 bg-abubglogout z-[90px] rounded-t-lg shadow-xl" x-show="show" x-transition.duration.800ms.origin.bottom>
+                  <div class="w-full">
+                        <img src="src/img/iconlogoutnoshadow.png" class="w-40 mx-auto rounded-full" alt="">
+                        <h3 class="text-center text-3xl mt-3 font-bold">Kamu Yakin?</h3>
+                        <p class="break-words font-normal text-center mb-7 mt-3 text-coolfreshprimary text-[0.938rem]">Apakah anda yakin ingin keluar dari akun ini? Anda dapat login kembali dengan mudah.</p>
+                        <div class="flex flex-col w-full gap-5">
+                              <button type="button" class="w-full py-3 bg-btncoolfresh rounded-full text-langitbirucoolfresh font-semibold" @click="show = !show">Cancel</button>
+                              <button type="button" class="w-full py-3 bg-white rounded-full text-red-600 font-semibold">Logout</button>
+                        </div>
+                  </div>
+            </div> 
       </div>
 </body> 
 </html>
